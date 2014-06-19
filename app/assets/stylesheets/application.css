@@ -13,19 +13,46 @@
  *= require_tree .
  *= require_self
  */
+ .btn-cancel {
+ 	float: right;
+ }
+
+ .error-reasons {
+ 	color: #d9534f;
+ }
+
+ .update-title {
+ 	color: white;
+ }
+
+ .delete {
+ 	float: right;
+ }
+
+.project-sm {
+	margin-left: 1em;
+	margin-right: 1em;
+}
 
 .thumb-title {
 	font-size: 22px;
 }
 
 .thumb-description {
-	margin-left: 1em;
+	margin-left: -1em;
 }
 .thumb-who {
 	font-size: 11px;
 	margin-left: 1em;
+	margin-top: -1.5em;
+	margin-bottom: 0em;
+	text-indent: 1em;
 }
 
 .update-who {
+	float:right;
+}
+
+.project-btns {
 	float:right;
 }

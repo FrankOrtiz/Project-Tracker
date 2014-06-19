@@ -54,9 +54,10 @@ class UpdatesController < ApplicationController
   # DELETE /updates/1
   # DELETE /updates/1.json
   def destroy
+    current_project = @update.project
     @update.destroy
     respond_to do |format|
-      format.html { redirect_to updates_url, notice: 'Update was successfully destroyed.' }
+      format.html { redirect_to current_project, notice: 'Update was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -30,9 +30,12 @@
       	<% if current_page?(updates_path)%>
         <li><a href="projects">Current Projects</a></li>
         <li class="active"><a href="updates">Updates Feed</a></li>
-        <% else %>
+        <% elsif current_page?(projects_path) %>
         <li class="active"><a href="projects">Current Projects</a></li>
         <li><a href="updates">Updates Feed</a></li>
+        <% else %>
+        <li><a href="/projects">Current Projects</a></li>
+        <li><a href="/updates">Updates Feed</a></li>
         <% end %>
         </li>
       </ul>

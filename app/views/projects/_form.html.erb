@@ -1,16 +1,20 @@
+
+<div class="well">
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
+      <h2><span class="label label-danger"><%= pluralize(@project.errors.count, "error") %> during project creation</span></h2>
+  <div class="error-reasons">
       <ul>
       <% @project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
+    </div>
       </ul>
     </div>
   <% end %>
 
+<div class="well">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name, class:'form-control' %>

@@ -1,6 +1,6 @@
-<h1>Live Updates</h1>
+<h1>Current Updates</h1>
 
-    <% @updates.each do |update| %>
+    <% @updates.reverse.each do |update| %>
     <div class="list-group">
   <a href="projects/<%= update.project.id %>" class="list-group-item active">
     <%= update.project.name %>
@@ -15,11 +15,5 @@
   
   </div>
 </div>
-<%= link_to 'View Project', update %>
 
     <% end %>
-
-
-<br>
-
-<%= link_to 'Projects', projects_path %>

@@ -2,14 +2,16 @@
   <div class="col-sm-12">
     <h1>Active Lab Projects</h1>
      <% @projects.each do |project| %>
-
-      <div class="thumbnail" href="<%= project %>">
-        <div class="caption">
-          <span class="thumb-title"><strong><%= project.name %></strong></span>
-        </div>
-      <p class="thumb-description"><%= project.description %></p>
-      <p class="thumb-who"><%= project.who %></p>
+      <div class="thumbnail"> 
+        <div class="caption">         
+        <span class="thumb-title"><strong><%= project.name %></strong></span>  </div>
+        <div class="well project-sm" href="<%= project %>" >
+        
+      
+      <p class="thumb-description"><%= project.description %></p>  
     </div>
+    <p class="thumb-who"><%= project.who %></p>
+  </div>
     <% end %>
   </div>
 </div>
