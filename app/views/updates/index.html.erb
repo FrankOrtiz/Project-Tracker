@@ -1,15 +1,19 @@
-<h1>Listing updates</h1>
+<h1>Live Updates</h1>
 
     <% @updates.each do |update| %>
     <div class="list-group">
-  <a href="#" class="list-group-item active">
+  <a href="projects/<%= update.project.id %>" class="list-group-item active">
     <%= update.project.name %>
   </a>
-  <a href="#" class="list-group-item"><% t = update.created_at %>
-  Posted by:<%= update.who %> 
-  on 
-  <%= t.strftime("%b, %d %I:%M %p") %></a>
-  <a href="#" class="list-group-item"><%= update.description %></a>
+  <div class="well">
+    <span class="update-description"><%= update.description %>
+</span>
+    <% t = update.created_at %>
+    <p class="update-who">Posted by:<%= update.who %> 
+    on 
+    <%= t.strftime("%b, %d %I:%M %p") %></p>
+  
+  </div>
 </div>
 <%= link_to 'View Project', update %>
 
