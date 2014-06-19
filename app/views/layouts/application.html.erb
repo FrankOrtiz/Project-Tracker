@@ -2,10 +2,7 @@
 <html>
 <head>
   <title>Projecttracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -13,6 +10,9 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="projects">Project Tracker</a>
+      <a class="navbar-brand" href="/projects">Project Tracker</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,10 +39,10 @@
         <% end %>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+<!--       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Log In</a></li>
         </li>
-      </ul>
+      </ul> -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

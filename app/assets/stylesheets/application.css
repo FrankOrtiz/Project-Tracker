@@ -13,7 +13,34 @@
  *= require_tree .
  *= require_self
  */
+.btn-r {
+	margin-top: 1em;
+	float: right;
+}
+
+.float-right {
+	float:right;
+	margin-right: 1.5em;
+}
+
+.btn-l {
+	margin-top: 1em;
+}
+
+.thumb-title {
+	color:white;
+}
+
+.thumb-who {
+	float: right;
+	color: #DBDBDB;
+}
+
+.thumbnail {
+	background-color: #428bca;
+}
  .btn-cancel {
+ 	margin-top: 1em;
  	float: right;
  }
 
@@ -54,5 +81,6 @@
 }
 
 .project-btns {
+
 	float:right;
 }

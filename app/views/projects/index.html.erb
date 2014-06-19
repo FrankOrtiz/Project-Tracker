@@ -1,20 +1,17 @@
-<div class="row">
-  <div class="col-sm-12">
-    <h1>Active Lab Projects</h1>
+  <span class="list-group-item active update-title">
+    Active Lab Projects
+    <span class="float-right">
+      Updated
+    </span>
+  </span>
+<ul class="list-group">
      <% @projects.each do |project| %>
-      <div class="thumbnail"> 
-        <div class="caption">         
-        <span class="thumb-title"><strong><%= project.name %></strong></span>  </div>
-        <div class="well project-sm" href="<%= project %>" >
-        
-      
-      <p class="thumb-description"><%= project.description %></p>  
-    </div>
-    <p class="thumb-who"><%= project.who %></p>
-  </div>
+ <a href="/projects/<%= project.id %>" class="list-group-item">
+  <strong><%= project.name %></strong>
+  <span class="badge">1 day ago</span>
+ </a>
     <% end %>
-  </div>
-</div>
+</ul>
 
   <div class="btn-group">
   <%= link_to 'Create Project', new_project_path, class:'btn btn-primary btn-sm' %>

@@ -2,8 +2,8 @@
 <div class="jumbotron">
 
 <div class="project-btns">
-<%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-primary btn-xs' %>
-<%= link_to 'Remove Project', @project, method: :delete, data: { confirm: 'Are you sure you want to delete this Project?' }, class:'btn btn-primary btn-xs'  %>
+<%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-primary btn-sm' %>
+<%= link_to 'Remove Project', @project, method: :delete, data: { confirm: 'Are you sure you want to delete this Project?' }, class:'btn btn-primary btn-sm'  %>
 </div>
 
 <p>
@@ -38,7 +38,10 @@
 	on   
 	<%= t.strftime("%b, %d %I:%M %p") %>
 
-	<span class="delete"><%= link_to 'Remove', update, method: :delete, data: { confirm: 'Are you sure you want to delete this update?' }, class:'btn btn-danger btn-xs' %></span>
+    
+	<span class="delete">
+    <%= link_to 'Edit', "#", class:'btn btn-warning btn-xs' %>
+    <%= link_to 'Remove', update, method: :delete, data: { confirm: 'Are you sure you want to delete this update?' }, class:'btn btn-danger btn-xs' %></span>
 
 </span>
 <div class="well">
