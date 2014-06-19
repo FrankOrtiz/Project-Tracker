@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @project.who %>
+</p>
+
+<p>
+  <strong>How:</strong>
+  <%= @project.how %>
+</p>
+
+<h3>Project updates</h3>
+<% @project.updates.each do |update| %>
+<p>
+	<% t = update.created_at %>
+	Posted by:
+	<%= update.who %> 
+	on 
+	<%= t.strftime("%b, %d %I:%M %p") %>
+
+	<%= button_to 'x', update, method: :delete, data: { confirm: 'Are you sure you want to delete this update?' }, :method => 'get', class:'btn btn-danger btn-xs' %>
+	<br>
+	<%= update.description %>
+</p>
+<% end %>
+
+<strong>Update on project:</strong>
+<%= render 'updates/form' %>
+
+<%= button_to 'Edit Project', edit_project_path(@project), :method => 'get', class:'btn btn-primary btn-xs' %>
+
+<%= button_to 'Projects Page', projects_path, :method => 'get', class:'btn btn-primary btn-xs' %>
+
+<%= button_to 'Remove Project', @project, method: :delete, data: { confirm: 'Are you sure you want to delete this Project?' }, class:'btn btn-primary btn-xs'  %>
