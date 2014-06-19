@@ -5,10 +5,14 @@
     </span>
   </span>
 <ul class="list-group">
+
      <% @projects.each do |project| %>
+
  <a href="/projects/<%= project.id %>" class="list-group-item">
   <strong><%= project.name %></strong>
-  <span class="badge">1 day ago</span>
+  <span class="badge">
+    <%= time_ago_in_words(project.created_at)%>
+    ago</span>
  </a>
     <% end %>
 </ul>
