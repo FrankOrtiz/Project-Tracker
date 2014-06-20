@@ -11,8 +11,15 @@
  <a href="/projects/<%= project.id %>" class="list-group-item">
   <strong><%= project.name %></strong>
   <span class="label label-default" id="time-ago">
-    <%= time_ago_in_words(project.created_at)%>
-    ago</span>
+      <% x = project.updates.order('created_at DESC').first %>
+      <% if project.updates.empty? %>
+      No updates
+      <% else %>
+      <%= time_ago_in_words(x.created_at) %>    
+        ago by 
+    <%= x.who %>
+      <% end %>
+  </span>
  </a>
     <% end %>
 </ul>
