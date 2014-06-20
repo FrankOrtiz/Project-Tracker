@@ -19,12 +19,14 @@
 .hidden {
 	display: none;
 } 
+
 .well {
 	max-height: 620px;
+	margin-bottom: 5px;
 }
+
 #notice-box {
-	position: fixed;
-	top: 7.5%;
+	text-align: center;
 }
 
 #notice {
