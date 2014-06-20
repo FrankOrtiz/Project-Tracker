@@ -1,34 +1,33 @@
 <%= form_for(@update) do |f| %>
-  <% if @update.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@update.errors.count, "error") %> prohibited this update from being saved:</h2>
+<% if @update.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@update.errors.count, "error") %> prohibited this update from being saved:</h2>
 
-      <ul>
-      <% @update.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-<!--     <%= f.label :who %><br> -->
-    <%= f.text_field :who, class:'form-control', placeholder:'Who\'s updating...' %>
-  </div>
-
-<% if @project.nil? %>
-<% else %>
-<div class="field">
-<%= f.hidden_field :project_id, value: @project.id %>
+  <ul>
+    <% @update.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
 </div>
 <% end %>
-<br>
-  <div class="field">
-<!--     <%= f.label "Update" %><br> -->
-    <%= f.text_area :description, class:'form-control', placeholder:'Project update...' %>
+<div id="update-form">
+  <p>
+    <div class="field">
+      <%= f.text_area :description, class:'form-control', placeholder:'Post an update...', id:'postText' %>
+    </div>
+  </p>
+    <div class="field">
+      <%= f.text_field :who, class:'form-control hidden can-hide', placeholder:'Who\'s updating...' %>
   </div>
-<div class="btn-toolbar" role="toolbar">
-  <div class="actions btn-group">
-    <%= f.submit 'Submit', class:'btn btn-primary btn-sm btn-l' %>
+  <% if @project.nil? %>
+  <% else %>
+  <div class="field">
+    <%= f.hidden_field :project_id, value: @project.id %>
   </div>
   <% end %>
+  <div class="actions btn-group">
+    <%= f.submit 'Submit', class:'btn btn-primary btn-sm btn-l hidden can-hide' %>
+  </div>
+</div>
+<br>
+<% end %>

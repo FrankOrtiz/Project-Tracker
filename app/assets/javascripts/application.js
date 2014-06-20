@@ -12,5 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
+//= require bootstrap
 //= require_tree .
+$(function(){
+
+$("#postText").click(function(){
+	$('.hidden').removeClass('hidden')
+})
+
+// $("#update-form").on("blur", 
+// function(){
+
+// 	$('.can-hide').addClass('hidden')
+
+// }
+
+// )	
+
+});
+
+
