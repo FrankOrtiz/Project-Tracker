@@ -5,13 +5,14 @@
   <a href="projects/<%= update.project.id %>" class="list-group-item active">
       <%= update.project.name %>
   <span class="float-right">
-      <%= time_ago_in_words(update.created_at)%> ago
+      <%= time_ago_in_words(update.created_at)%> ago by
+      <em><%= update.who %></em>
   </span>
   </a>
   <div class="well">
     <span class="update-description"><%= update.description %>
 </span>
-    <p class="update-who">Posted by:<%= update.who %> 
+    <p class="update-who">
   
   </div>
 </div>

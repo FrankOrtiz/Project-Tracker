@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'projects#index'
 
+
   resources :updates
+
+
 
   resources :projects do
     resources :updates

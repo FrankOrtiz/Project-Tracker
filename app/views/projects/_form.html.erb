@@ -16,21 +16,21 @@
 
 <div class="well">
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class:'form-control' %>
+    <%= f.text_field :name, class:'form-control', placeholder:'Project name' %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class:'form-control' %>
+    <%= f.text_area :description, class:'form-control', placeholder:'Brief description...' %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :who %><br>
-    <%= f.text_area :who, class:'form-control' %>
-  </div>
+    <%= f.text_area :who, class:'form-control', placeholder:'Who\'s involved...' %>
+  </div>    
+  <br>
   <div class="field">
-    <%= f.label :how %><br>
-    <%= f.text_area :how, class:'form-control' %>
+    <%= f.text_area :how, class:'form-control', placeholder:'How others can become involved...' %>
   </div>
+  <br>
 <div class="btn-toolbar" role="toolbar">
 
     <%= f.submit 'Submit', class:'btn btn-primary btn-sm' %>

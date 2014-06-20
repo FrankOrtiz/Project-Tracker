@@ -28,7 +28,7 @@ class UpdatesController < ApplicationController
 
     respond_to do |format|
       if @update.save
-        format.html { redirect_to @update.project, notice: 'Update was successfully created.' }
+        format.html { redirect_to @update.project, notice: 'Update created.' }
         format.json { render :show, status: :created, location: @update }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class UpdatesController < ApplicationController
   def update
     respond_to do |format|
       if @update.update(update_params)
-        format.html { redirect_to @update.project, notice: 'Update was successfully updated.' }
+        format.html { redirect_to @update.project, notice: 'Update was successful' }
         format.json { render :show, status: :ok, location: @update }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class UpdatesController < ApplicationController
     current_project = @update.project
     @update.destroy
     respond_to do |format|
-      format.html { redirect_to current_project, notice: 'Update was successfully destroyed.' }
+      format.html { redirect_to current_project, notice: 'Update removed.' }
       format.json { head :no_content }
     end
   end
