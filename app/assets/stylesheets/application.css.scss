@@ -16,9 +16,22 @@
 
 @import 'bootstrap';
 
+.reduce {
+	overflow: hidden;
+}
+
+
+#project-edited {
+	float: right;
+}
+
 .hidden {
 	display: none;
 } 
+
+.word-break {
+	word-wrap: normal;
+}
 
 .well {
 	max-height: 620px;
@@ -57,7 +70,6 @@
 }
 
 .btn-r {
-	margin-top: 1em;
 	float: right;
 }
 

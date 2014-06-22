@@ -1,5 +1,6 @@
 class Update < ActiveRecord::Base
   belongs_to :project
 		validates :who, presence: true,
-					length: { in: 3..25 }
+						length:(3..20)
+		validates :description, presence: true
 end

@@ -5,11 +5,14 @@
     </span>
   </span>
 <ul class="list-group">
-
+<div class='word-break'>
+  
      <% @projects.each do |project| %>
 
  <a href="/projects/<%= project.id %>" class="list-group-item">
-  <strong><%= project.name %></strong>
+    <div class="reduce">
+    <strong><%= project.name %></strong>
+
   <span class="label label-default" id="time-ago">
       <% x = project.updates.order('created_at DESC').first %>
       <% if project.updates.empty? %>
@@ -18,10 +21,12 @@
       <%= time_ago_in_words(x.created_at) %>    
         ago by 
     <%= x.who %>
+
       <% end %>
+</div>
   </span>
  </a>
-    <% end %>
+    <% end %> 
 </ul>
 
   <div class="btn-group">
