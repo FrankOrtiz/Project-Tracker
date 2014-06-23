@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   get "logout", to: "sessions#logout", as: :logout
   root 'projects#index'
 
-  get "updates", to: "projects#show"
-
-
 
   resource :sessions 
   resource :users

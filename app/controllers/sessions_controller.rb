@@ -9,9 +9,10 @@ class SessionsController < ApplicationController
 		if @user 
 		 # logged in, hooray 
 		 session[:user_id] = @user.id 
-		 redirect_to root_path
+		 session[:user_name] = @user.username
+		 redirect_to root_path, notice: "Sucessfully logged in"
 		else 
-			render action: 'new'
+			redirect_to root_path, notice: "Failed to log in"
 		end 
 	end 
 
@@ -22,6 +23,6 @@ class SessionsController < ApplicationController
 
 	def logout
 		session[:user_id] = nil
-		redirect_to root_path
+		redirect_to root_path, notice: "Logged out"
 	end
 end

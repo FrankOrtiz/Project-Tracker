@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	 if @user.save 
 	 	redirect_to root_path, notice: "Created user" 
 	 else 
-	 	render action: 'new' 
+	 	redirect_to root_path, notice: "Failed to create user"
 	 end 
   end
 

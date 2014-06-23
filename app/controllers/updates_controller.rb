@@ -32,7 +32,7 @@ class UpdatesController < ApplicationController
         format.html { redirect_to @update.project, notice: 'Update created.' }
         format.json { render :show, status: :created, location: @update }
       else
-        format.html { render :new }
+        format.html { redirect_to @update.project, notice: 'Update failed, author required' }
         format.json { render json: @update.errors, status: :unprocessable_entity }
       end
     end
