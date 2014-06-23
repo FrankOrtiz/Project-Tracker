@@ -34,16 +34,21 @@
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <%= form_tag sessions_path do %> 
-       <li>
-          <%= text_field :username, class:'form-control', placeholder:'username' %>
-          <%= submit_tag 'Log in', class:'btn btn-primary btn-xs' %>
-        </li>
-        <li>
-           <%= password_field :password, class:'form-control', placeholder:'password' %>  
-           <%= link_to 'Register', new_users_path, class:'btn btn-primary btn-xs btn' %>
-        </li> 
-     <% end %>
+
+        <% if session[:user_id] %>
+                  <%= link_to 'Log out', logout_path, class:'btn btn-primary btn-xs btn' %>
+        <% else %>
+              <%= form_tag sessions_path do %> 
+             <li>
+                <%= text_field_tag :username %>
+                <%= submit_tag 'Log in', class:'btn btn-primary btn-xs'%>
+              </li>
+              <li>
+                 <%= password_field_tag :password  %>  
+                 <%= link_to 'Register', new_users_path, class:'btn btn-primary btn-xs btn' %>
+              </li> 
+               <% end %>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->

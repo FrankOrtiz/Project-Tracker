@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+
 
   get 'users/new'
-
+  get "logout", to: "sessions#logout", as: :logout
   root 'projects#index'
+
+  get "updates", to: "projects#show"
+
+
 
   resource :sessions 
   resource :users
