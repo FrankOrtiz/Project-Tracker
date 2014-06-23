@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
 		if @user 
 		 # logged in, hooray 
 		 session[:user_id] = @user.id 
-		 session[:user_name] = @user.username
 		 redirect_to root_path, notice: "Sucessfully logged in"
 		else 
 			redirect_to root_path, notice: "Failed to log in"

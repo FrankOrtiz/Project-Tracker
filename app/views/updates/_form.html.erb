@@ -17,7 +17,7 @@
     </div>
   </p>
     <div class="field">
-      <%= f.text_field :who, class:'form-control hidden can-hide', placeholder:'Who\'s updating...' %>
+      <%= f.hidden_field :who, value: current_user.username %>
   </div>
   <% if @project.nil? %>
   <% else %>
