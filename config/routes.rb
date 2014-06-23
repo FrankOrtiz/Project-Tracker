@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'projects#index'
 
-
+  resources :users
   resources :updates
-
-
 
   resources :projects do
     resources :updates
