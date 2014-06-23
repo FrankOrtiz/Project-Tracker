@@ -16,10 +16,18 @@
 
 @import 'bootstrap';
 
+.btn-submit {
+	margin-left: 80%;
+ }
+
+
+.btn-register {
+	margin-left: 35%;
+}
+
 .reduce {
 	overflow: hidden;
 }
-
 
 #project-edited {
 	float: right;
@@ -100,11 +108,6 @@
 	background-color: #428bca;
 }
 
-.btn-cancel {
- 	margin-top: 1em;
- 	float: right;
- }
-
  .error-reasons {
  	color: #d9534f;
  }
@@ -145,4 +148,8 @@
 .project-btns {
 
 	float:right;
+}
+
+.btn-cancel {
+	margin-left: .5%;
 }

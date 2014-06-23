@@ -33,10 +33,18 @@
         <li><a href="/updates">Updates</a></li>
         <% end %>
       </ul>
-<!--       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Log In</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <%= form_tag sessions_path do %> 
+       <li>
+          <%= text_field :username, class:'form-control', placeholder:'username' %>
+          <%= submit_tag 'Log in', class:'btn btn-primary btn-xs' %>
         </li>
-      </ul> -->
+        <li>
+           <%= password_field :password, class:'form-control', placeholder:'password' %>  
+           <%= link_to 'Register', new_users_path, class:'btn btn-primary btn-xs btn' %>
+        </li> 
+     <% end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>

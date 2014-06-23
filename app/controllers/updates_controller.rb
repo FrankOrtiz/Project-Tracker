@@ -1,5 +1,6 @@
 class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
+  # before_action :require_logged_in 
 
   # GET /updates
   # GET /updates.json

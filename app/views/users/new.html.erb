@@ -1,16 +1,38 @@
-<h1>Sign up</h1> 
-<%= form_for @user do |f| %> 
-	<p> 
-		f.label :username %> <%= f.text_field :username %> 
-	</p> 
-	<p> 
-		.label :password %> <%= f.password_field :password %> 
-	</p> 
-	<p> 
-		<%= f.label :password_confirmation %> 
-		<%= f.password_field :password_confirmation %> 
-	</p> 
-	<p> 
-		<%= f.submit %>
-	</p>
-<% end %>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+
+    </div>
+
+   	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+		<a class="list-group-item active">
+		<h1><span class="info">New User</span></h1>
+		</a>
+
+		<div class="well">
+			<%= form_for @user do |f| %> 
+				<p> 
+					<%= f.text_field :name, class:'form-control', placeholder:'name' %> 
+				</p> 
+				<p> 
+					<%= f.text_field :email, class:'form-control', placeholder:'email' %> 
+				</p> 
+				<p> 
+					<%= f.text_field :username, class:'form-control', placeholder:'username' %> 
+				</p> 
+				<p> 
+					<%= f.password_field :password, class:'form-control', placeholder:'password' %> 
+				</p> 
+				<p> 
+					<%= f.password_field :password_confirmation, class:'form-control', placeholder:'confirm password' %> 
+				</p> 
+				<p> 
+					<%= f.submit 'Create account', class:'btn btn-primary btn-sm btn-register' %>
+				</p>
+			<% end %>
+		</div>	
+
+	</div>
+</div>

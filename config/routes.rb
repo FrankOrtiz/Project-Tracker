@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   root 'projects#index'
 
-  resources :users
+  resource :sessions 
+  resource :users
   resources :updates
 
   resources :projects do
