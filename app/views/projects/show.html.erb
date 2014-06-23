@@ -51,7 +51,7 @@
           </span>    
           <div class="well">
           <div center="center">
-           <%= update.description %>
+          <%= simple_format h update.description %>
          </div>
           </div>
           <%= link_to 'Edit', edit_update_path(update), class:'btn btn-warning btn-xs' %>
