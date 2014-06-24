@@ -43,11 +43,9 @@
               <%= form_tag sessions_path do %> 
              <li>
                 <%= text_field_tag :username %>
-                <%= submit_tag 'Log in', class:'btn btn-primary btn-xs'%>
-              </li>
-              <li>
                  <%= password_field_tag :password  %>  
-                 <%= link_to 'Register', new_users_path, class:'btn btn-primary btn-xs btn' %>
+                 <%= submit_tag 'Log in', class:'btn btn-primary btn-xs'%>
+                 <%= link_to 'Sign up', new_users_path %>
               </li> 
                <% end %>
         <% end %>
