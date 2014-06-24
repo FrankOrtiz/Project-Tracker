@@ -36,7 +36,9 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if session[:user_id] %>
-                  <%= link_to 'Log out', logout_path, class:'btn btn-primary btn-xs btn' %>
+            <p>
+              <%= link_to 'Log out', logout_path, class:'btn btn-primary btn-xs btn', id:'logout' %>
+            </p>
         <% else %>
               <%= form_tag sessions_path do %> 
              <li>
