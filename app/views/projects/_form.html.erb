@@ -30,7 +30,9 @@
     <%= f.text_area :how, class:'form-control', placeholder:'How others can become involved...' %>
   </div>
   <br>
-  <% if :created_at.nil? %>
+  <% if @project.latest_updated.nil? %>
+    <% @project.latest_updated = Time.now %>  
+    <% @project.save %>
   <% else %>
     <%= f.hidden_field :editor, value: current_user.username %>
   <% end %>

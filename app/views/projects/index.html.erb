@@ -12,7 +12,6 @@
         </span>
       <ul class="list-group">
       <div class='word-break'>
-
       <% @projects.order('latest_updated DESC').each do |project| %>
 
        <a href="/projects/<%= project.id %>" class="list-group-item">
@@ -35,7 +34,11 @@
           <% end %> 
       </ul>
         <div class="btn-group">
+        <% if current_user %>
         <%= link_to 'Create Project', new_project_path, class:'btn btn-primary btn-sm' %>
+        <% else %>
+        <%= link_to 'Log in to create a project!', new_sessions_path %>
+        <% end %>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 well" >
