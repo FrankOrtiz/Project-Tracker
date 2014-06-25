@@ -41,7 +41,7 @@
           <%= @username %>
         </p>
         <% end %>
-        <% @project.updates.reverse.each do |update| %>
+        <% @project.updates.each do |update| %>
         <div class="list-group">
           <span class="list-group-item active">
           <%= time_ago_in_words(update.updated_at)%>
