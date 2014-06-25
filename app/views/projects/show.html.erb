@@ -23,7 +23,7 @@
           <%= simple_format h(@project.how).gsub(/\n/, '<br/>') %>
         </p>
 
-        <span id="edited"><em><p>Edited <%= time_ago_in_words(@project.updated_at) %>.</p></em></span>
+        <span id="edited"><em><p>Edited by <%= @project.editor %> <%= time_ago_in_words(@project.updated_at) %>.</p></em></span>
 
           <%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-warning btn-sm' %>
 

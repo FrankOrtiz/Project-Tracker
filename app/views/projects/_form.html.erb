@@ -30,7 +30,8 @@
     <%= f.text_area :how, class:'form-control', placeholder:'How others can become involved...' %>
   </div>
   <br>
-
+    <%= f.hidden_field :editor, value: current_user.username %>
+    
     <%= f.submit 'Submit', class:'btn btn-primary btn-sm btn-submit'%>
 
 <% end %>
