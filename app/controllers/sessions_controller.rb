@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 		 session[:user_id] = @user.id 
 		 redirect_to root_path, notice: "Sucessfully logged in"
 		else 
-			redirect_to root_path, notice: "Failed to log in"
+			redirect_to '/sessions/new', notice: "Failed to log in"
 		end 
 	end 
 

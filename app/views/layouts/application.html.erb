@@ -36,18 +36,14 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if session[:user_id] %>
-            <p>
+            <div id="logout">
               <%= link_to 'Log out', logout_path, class:'btn btn-primary btn-xs btn', id:'logout' %>
-            </p>
+            </div>
         <% else %>
-              <%= form_tag sessions_path do %> 
-             <li>
-                <%= text_field_tag :username %>
-                 <%= password_field_tag :password  %>  
-                 <%= submit_tag 'Log in', class:'btn btn-primary btn-xs'%>
-                 <%= link_to 'Sign up', new_users_path %>
-              </li> 
-               <% end %>
+            <div id="login">
+                <li><%= link_to 'Log in', new_sessions_path %> |
+                  <%= link_to 'Sign up', new_users_path %></li>
+            </div>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -26,38 +26,38 @@
   # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
       half_a_minute: "30 secs"
       less_than_x_seconds:
-        one:   "less than 1 second"
-        other: "less than %{count} secs"
+        one:   "less than 1 second ago"
+        other: "less than %{count} secs ago"
       x_seconds:
-        one:   "1 sec"
-        other: "%{count} secs"
+        one:   "1 sec ago"
+        other: "%{count} secs ago"
       less_than_x_minutes:
-        one:   "less than a minute"
-        other: "less than %{count} mins"
+        one:   "less than a minute ago"
+        other: "less than %{count} mins ago"
       x_minutes:
-        one:   "1 minute"
-        other: "%{count} mins"
+        one:   "1 minute ago"
+        other: "%{count} mins ago"
       about_x_hours:
-        one:   "1 hr"
-        other: "%{count} hrs"
+        one:   "1 hr ago"
+        other: "%{count} hrs ago"
       x_days:
         one:   "yesterday"
-        other: "%{count} days"
+        other: "%{count} days ago"
       about_x_months:
-        one:   "1 month"
-        other: "%{count} month"
+        one:   "1 month ago"
+        other: "%{count} month ago"
       x_months:
-        one:   "1 month"
-        other: "%{count} m"
+        one:   "1 month ago"
+        other: "%{count} m ago"
       about_x_years:
-        one:   "1 yr"
-        other: "%{count} yrs"
+        one:   "1 yr ago"
+        other: "%{count} yrs ago"
       over_x_years:
-        one:   "1 yr"
-        other: "%{count} yrs"
+        one:   "1 yr ago"
+        other: "%{count} yrs ago"
       almost_x_years:
-        one:   "1 yr"
-        other: "%{count} yrs"
+        one:   "1 yr ago"
+        other: "%{count} yrs ago"
     prompts:
       year:   "Year"
       month:  "Month"
