@@ -9,7 +9,7 @@
   </span>
   </a>
   <div class="well" id="individual-update">
-    <span class="update-description"><%= update.description %>
+    <span class="update-description"><%= simple_format h(update.description).gsub(/\n/, '<br/>') %>
 </span>
     <p class="update-who">
   </div>
