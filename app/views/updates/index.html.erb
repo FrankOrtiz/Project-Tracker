@@ -1,5 +1,5 @@
 
-    <% @updates.reverse.each do |update| %>
+    <% @updates.order('created_at DESC').each do |update| %>
     <div class="list-group">
   <a href="projects/<%= update.project.id %>" class="list-group-item active">
       <%= update.project.name %>
