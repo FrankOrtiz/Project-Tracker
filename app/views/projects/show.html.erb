@@ -39,8 +39,8 @@
           <%= @username %>
         </p>
         <% end %>
+        <p>Edited by <%= @project.who %> <%= time_ago_in_words(@project.updated_at) %>.</p>
         <% @project.updates.each do |update| %>
-          <p>Edited by <%= update.who %> <%= time_ago_in_words(update.project.created_at) %>.</p>
         <div class="list-group">
           <span class="list-group-item active">
           <%= time_ago_in_words(update.created_at)%>
