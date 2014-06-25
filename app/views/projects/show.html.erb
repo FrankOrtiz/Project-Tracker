@@ -9,18 +9,18 @@
         <p>
 
           <h2 class="project-title"><%= @project.name %></h2>
-          <%= @project.description %>
+          <%= simple_format h(@project.description).gsub(/\n/, '<br/>') %>
         </p>
 
         <p>   
-          <h4><u>Currently on this project:</u></h4>
-          <%= @project.who %>
+          <h4><u>Who's involved:</u></h4>
+          <%= simple_format h(@project.who).gsub(/\n/, '<br/>') %>
         </p>
 
         <p>
 
-          <h4><u>How to get involved:</u></h4>
-          <%= @project.how %>
+          <h4><u>How others can become involved:</u></h4>
+          <%= simple_format h(@project.how).gsub(/\n/, '<br/>') %>
         </p>
 
         <span id="edited"><em><p>Edited <%= time_ago_in_words(@project.updated_at) %>.</p></em></span>
@@ -50,7 +50,7 @@
           </span>    
           <div class="well">
           <div center="center" id="individual-update">
-          <%= simple_format h update.description %>
+          <%= simple_format h(update.description).gsub(/\n/, '<br/>') %>
          </div>
           </div>
           <%= link_to 'Edit', edit_update_path(update), class:'btn btn-warning btn-xs' %>
