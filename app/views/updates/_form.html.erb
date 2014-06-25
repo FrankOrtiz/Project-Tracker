@@ -25,9 +25,13 @@
     <%= f.hidden_field :project_id, value: @project.id %>
   </div>
   <% end %>
+
+      <% @project.latest_updated = Time.now %>  
+      <% @project.save %>
   <div class="actions btn-group">
     <%= f.submit 'Submit', class:'btn btn-primary btn-sm btn-l hidden can-hide' %>
   </div>
 </div>
 <br>
+
 <% end %>

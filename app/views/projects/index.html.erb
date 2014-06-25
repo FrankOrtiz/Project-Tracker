@@ -12,21 +12,22 @@
         </span>
       <ul class="list-group">
       <div class='word-break'>
-        
-           <% @projects.each do |project| %>
+<!-- som s sew -->
+
+      <% @projects.order('latest_updated DESC').each do |project| %>
 
        <a href="/projects/<%= project.id %>" class="list-group-item">
           <div class="reduce">
           <strong><%= project.name %></strong>
 
         <span class="label label-default" id="time-ago">
-            <% x = project.updates.order('created_at DESC').first %>
+            <% updated = project.updates.order('created_at DESC').first %>
             <% if project.updates.empty? %>
             No updates
             <% else %>
-            <%= time_ago_in_words(x.created_at) %>    
+            <%= time_ago_in_words(updated.created_at) %>    
                by 
-          <%= x.who %>
+          <%= updated.who %>
           
             <% end %>
       </div>
