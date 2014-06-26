@@ -31,5 +31,3 @@ $("#postText").click(function(){
 // )	
 
 });
-
-
