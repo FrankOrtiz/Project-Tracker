@@ -1,5 +1,7 @@
 
     <% @updates.order('created_at DESC').each do |update| %>
+    <% if update.project_edit %>
+    <% else %>
     <div class="list-group">
   <a href="projects/<%= update.project.id %>" class="list-group-item active">
       <%= update.project.name %>
@@ -20,4 +22,5 @@
     </div>
     <% end %>
 </div>
+    <% end %>
     <% end %>
