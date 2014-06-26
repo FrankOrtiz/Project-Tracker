@@ -1,0 +1,27 @@
+<h1>Listing watchings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Watcher</th>
+      <th>Watched</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @watchings.each do |watching| %>
+      <tr>
+        <td><%= watching.watcher_id %></td>
+        <td><%= watching.watched_id %></td>
+        <td><%= link_to 'Show', watching %></td>
+        <td><%= link_to 'Edit', edit_watching_path(watching) %></td>
+        <td><%= link_to 'Destroy', watching, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Watching', new_watching_path %>

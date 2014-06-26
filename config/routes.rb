@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :watchings
+
   get 'users/new'
   get "logout", to: "sessions#logout", as: :logout
   root 'projects#index'

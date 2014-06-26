@@ -1,8 +1,8 @@
 class CreateWatchings < ActiveRecord::Migration
   def change
     create_table :watchings do |t|
-      t.references :user
-      t.references :project
+      t.integer :watcher_id
+      t.integer :watched_id
 
       t.timestamps
     end

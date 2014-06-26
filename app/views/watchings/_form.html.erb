@@ -1,0 +1,25 @@
+<%= form_for(@watching) do |f| %>
+  <% if @watching.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@watching.errors.count, "error") %> prohibited this watching from being saved:</h2>
+
+      <ul>
+      <% @watching.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :watcher_id %><br>
+    <%= f.number_field :watcher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :watched_id %><br>
+    <%= f.number_field :watched_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
