@@ -21,13 +21,26 @@
 
         <h4><u>How others can become involved:</u></h4>
         <%= simple_format h(@project.how).gsub(/\n/, '<br/>') %>
+
       </p>
+        <p>
+      <% if %>
+      <div class="watcher" id="watch">
+        <%= link_to 'Watch', '/projects/1', class:'btn btn-primary btn-xs' %>
+      </div>
+      <% else %>
+      <div class="watcher" id="watching">
+        <%= link_to 'Watching', '/projects/1', class:'btn btn-primary btn-xs' %>
+      </div>
+      <% end %>
+        </p>
+
       <% if @project.editor %>
         <span id="edited"><em><p>Edited by <%= @project.editor %> <%= time_ago_in_words(@project.updated_at) %>.</p></em></span>
       <% else %>
       <% end %>
       <% if current_user %>
-        <% if @project.editor == current_user.username %>
+        <% if @project.author == current_user.username %>
           <%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-warning btn-sm' %>
           <%= link_to 'Remove Project', @project, method: :delete, data: { confirm: 'Are you sure you want to delete this Project?' }, class:'btn btn-danger btn-sm'  %>
         <% else %>

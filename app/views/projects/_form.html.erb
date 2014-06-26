@@ -31,6 +31,7 @@
   </div>
   <br>
   <% if @project.latest_updated.nil? %>
+  <%= f.hidden_field :author, value: current_user.username %>
     <% @project.latest_updated = Time.now %>  
     <% @project.save %>
   <% else %>
