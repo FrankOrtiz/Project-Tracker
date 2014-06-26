@@ -43,6 +43,8 @@
         <% if @project.author == current_user.username %>
           <%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-warning btn-sm' %>
           <%= link_to 'Remove Project', @project, method: :delete, data: { confirm: 'Are you sure you want to delete this Project?' }, class:'btn btn-danger btn-sm'  %>
+        <% elsif @project.editor == current_user.username %>
+          <%= link_to 'Edit Project', edit_project_path(@project), class:'btn btn-warning btn-sm' %>
         <% else %>
         <% end %>
       <% else %>
