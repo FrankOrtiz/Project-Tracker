@@ -36,6 +36,12 @@
     <% @project.save %>
   <% else %>
     <%= f.hidden_field :editor, value: current_user.username %>
+    <% update = Update.new %>
+    <% update.project_id = @project.id %>
+    <% update.project_edit = true %>
+    <% update.who = current_user.username %>
+    <% update.description = "Project eddited" %>
+    <% update.save %>
   <% end %>
     
     <%= f.submit 'Submit', class:'btn btn-primary btn-sm btn-submit'%>

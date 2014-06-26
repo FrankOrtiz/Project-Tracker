@@ -71,6 +71,6 @@ class UpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def update_params
-      params.require(:update).permit(:who, :description, :project_id)
+      params.require(:update).permit(:who, :description, :project_id, :project_edit)
     end
 end
