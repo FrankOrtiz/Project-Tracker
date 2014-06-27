@@ -9,6 +9,7 @@
       <p>
 
         <h2 class="project-title"><%= @project.name %></h2>
+        <span class="author">Posted by: <%= @project.author %></span>
         <%= simple_format h(@project.description).gsub(/\n/, '<br/>') %>
       </p>
 
