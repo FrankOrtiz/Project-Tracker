@@ -1,26 +1,33 @@
 
-    <% @updates.order('created_at DESC').each do |update| %>
-    <% if update.project_edit %>
-    <% else %>
-    <div class="list-group">
-  <a href="projects/<%= update.project.id %>" class="list-group-item active">
-      <%= update.project.name %>
-  <span class="float-right">
-      <%= time_ago_in_words(update.created_at)%> by
-      <em><%= update.who %></em>
+  <% @updates.order('created_at DESC').each do |update| %>
+      <% if update.project_edit %>
+      <% else %>
+      <div class="list-group">
+    <a href="projects/<%= update.project.id %>" class="list-group-item active">
+        <%= update.project.name %>
+    <span class="float-right">
+        <%= time_ago_in_words(update.created_at)%> by
+        <em><%= update.who %></em>
+    </span>
+    </a>
+    <div class="well">
+      <div id="individual-update">
+      <span class="update-description"><%= simple_format h(update.description).gsub(/\n/, '<br/>') %>
   </span>
-  </a>
-  <div class="well">
-    <div id="individual-update">
-    <span class="update-description"><%= simple_format h(update.description).gsub(/\n/, '<br/>') %>
-</span>
-    <p class="update-who">
-  </div>
-    <% if update.updated_at == update.created_at %>
-    <% else %>
-    <span class="well-corner" id="edited">Edited <%= time_ago_in_words(update.updated_at)%>.<span>
+      <p class="update-who">
     </div>
-    <% end %>
-</div>
-    <% end %>
-    <% end %>
+      <% if update.updated_at == update.created_at %>
+      <% else %>
+      <span class="well-corner" id="edited">Edited <%= time_ago_in_words(update.updated_at)%>.<span>
+      </div>
+      <% end %>
+  </div>
+      <% end %>
+ <% end %>
+
+
+<!--  Updates cleanse
+     updates = Update.where(project_id: )
+    updates.each do |update|
+      update.destroy
+    end -->

@@ -58,6 +58,10 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
+    updates = Update.where(project_id: @project.id)
+    updates.each do |update|
+      update.destroy
+    end
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was removed.' }
       format.json { head :no_content }
