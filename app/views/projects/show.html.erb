@@ -24,7 +24,7 @@
       </p>
 
 
-      <%= Watching.count %> Curently watching this project
+      <%= @project.watchings.count %> Curently watching this project
 
       <% if current_user %>
         <% project_watching = @project.watchings.find_by user_id: current_user.id %>
