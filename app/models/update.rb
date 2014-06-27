@@ -8,5 +8,4 @@ class Update < ActiveRecord::Base
 		project.latest_updated = Time.now
 		project.save
 	end
-
 end

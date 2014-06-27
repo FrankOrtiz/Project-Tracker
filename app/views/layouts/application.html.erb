@@ -25,12 +25,31 @@
       	<% if current_page?(updates_path)%>
         <li><a href="projects">Projects</a></li>
         <li class="active"><a href="updates">Updates</a></li>
+        <% if session[:user_id] %>
+        <li><a href="/watchings">Watch List</a></li>
+        <% else %>
+        <% end %>
         <% elsif current_page?(projects_path) %>
         <li class="active"><a href="projects">Projects</a></li>
         <li><a href="updates">Updates</a></li>
+        <% if session[:user_id] %>
+        <li><a href="/watchings">Watch List</a></li>
+        <% else %>
+        <% end %>
+        <% elsif current_page?(watchings_path) %>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="updates">Updates</a></li>
+        <% if session[:user_id] %>
+        <li class="active"><a href="/watchings">Watch List</a></li>
+        <% else %>
+        <% end %>
         <% else %>
         <li><a href="/projects">Projects</a></li>
         <li><a href="/updates">Updates</a></li>
+        <% if session[:user_id] %>
+        <li><a href="/watchings">Watch List</a></li>
+        <% else %>
+        <% end %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

@@ -32,7 +32,7 @@ class WatchingsController < ApplicationController
 
     respond_to do |format|
       if @watching.save
-        format.html { redirect_to root_path, notice: 'Watching was successfully created.' }
+        format.html { redirect_to root_path, notice: '' }
         format.json { render :show, status: :created, location: @watching }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class WatchingsController < ApplicationController
   def update
     respond_to do |format|
       if @watching.update(watching_params)
-        format.html { redirect_to @watching, notice: 'Watching was successfully updated.' }
+        format.html { redirect_to @watching, notice: '' }
         format.json { render :show, status: :ok, location: @watching }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class WatchingsController < ApplicationController
   def destroy
     @watching.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Watching was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'No longer watching project' }
       format.json { head :no_content }
     end
   end

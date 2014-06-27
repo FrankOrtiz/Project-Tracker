@@ -22,6 +22,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    if @project.author == current_user.username
+    else
+      redirect_to root_path, notice: 'You do not have access to that page'
+    end
   end
 
   # POST /projects
@@ -61,6 +65,10 @@ class ProjectsController < ApplicationController
     updates = Update.where(project_id: @project.id)
     updates.each do |update|
       update.destroy
+    end
+    watchings = Watching.where(project_id: @project.id)
+    watchings.each do |watching|
+      watching.destroy
     end
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was removed.' }

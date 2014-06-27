@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
 	redirect_to root_path 
 	return false 
  end 
-
 end

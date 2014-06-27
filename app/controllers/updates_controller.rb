@@ -20,6 +20,10 @@ class UpdatesController < ApplicationController
 
   # GET /updates/1/edit
   def edit
+    if @update.who == current_user.username
+    else
+      redirect_to root_path, notice: 'You do not have access to that page'
+    end
   end
 
   # POST /updates
