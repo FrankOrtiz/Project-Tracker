@@ -13,30 +13,41 @@
       </p>
 
       <p>   
-        <h4><u>Who's involved:</u></h4>
+        <h4>Who's involved:</h4>
         <%= simple_format h(@project.who).gsub(/\n/, '<br/>') %>
       </p>
 
       <p>
 
-        <h4><u>How others can become involved:</u></h4>
+        <h4>How others can become involved:</h4>
         <%= simple_format h(@project.how).gsub(/\n/, '<br/>') %>
-
       </p>
+
+
+      <%= Watching.count %> Curently watching this project
+
+      <% if current_user %>
+        <% project_watching = @project.watchings.find_by user_id: current_user.id %>
         <p>
-      <% if %>
-      <div class="watcher" id="watch">
-        <%= link_to 'Watch', '/projects/1', class:'btn btn-primary btn-xs' %>
-      </div>
+      <% if project_watching.nil? %>
+         <%= form_for(@watching) do |f| %>
+        <%= f.hidden_field :project_id, value: @project.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit 'Watch', class:'btn btn-primary btn-sm' %>
+        <% end %>
       <% else %>
-      <div class="watcher" id="watching">
-        <%= link_to 'Watching', '/projects/1', class:'btn btn-primary btn-xs' %>
-      </div>
+        <%= link_to 'Unwatch', project_watching, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
         </p>
+      <% else %>
+      <% end %>
+
+
+
+
 
       <% if @project.editor %>
-        <span id="edited"><em><p>Last edited by <%= @project.editor %> <%= time_ago_in_words(@project.updated_at) %>.</p></em></span>
+        <span id="edited"><em><p>Last edited by <%= @project.editor %> <%= time_ago_in_words(@project.updated_at) %></p></em></span>
       <% else %>
       <% end %>
       <% if current_user %>
@@ -81,7 +92,7 @@
               </div>
               <% if update.updated_at == update.created_at %>
               <% else %>
-              <span class="well-corner" id="edited">Edited <%= time_ago_in_words(update.updated_at)%>.<span>
+              <span class="well-corner" id="edited">Edited <%= time_ago_in_words(update.updated_at)%><span>
               <% end %>
             </div>
             <% if current_user %>

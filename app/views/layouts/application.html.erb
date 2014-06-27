@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>Projecttracker</title>
+  <title>Project Tracker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -41,7 +41,7 @@
             </div>
         <% else %>
             <div id="login">
-                <li><%= link_to 'Log in', new_sessions_path %> |
+                <li><%= link_to 'Log in', new_sessions_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <%= link_to 'Sign up', new_users_path %></li>
             </div>
         <% end %>

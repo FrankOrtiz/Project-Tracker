@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_secure_password
-	has_many :projects, :through => :watchings
+	has_many :watchings
+	has_many :projects
 	has_many :updates
 	validate :username, presence: true,
 					length: { in: 3..15 }

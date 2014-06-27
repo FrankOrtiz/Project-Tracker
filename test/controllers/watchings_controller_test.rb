@@ -18,7 +18,7 @@ class WatchingsControllerTest < ActionController::TestCase
 
   test "should create watching" do
     assert_difference('Watching.count') do
-      post :create, watching: { watched_id: @watching.watched_id, watcher_id: @watching.watcher_id }
+      post :create, watching: { project_id: @watching.project_id, user_id: @watching.user_id }
     end
 
     assert_redirected_to watching_path(assigns(:watching))
@@ -35,7 +35,7 @@ class WatchingsControllerTest < ActionController::TestCase
   end
 
   test "should update watching" do
-    patch :update, id: @watching, watching: { watched_id: @watching.watched_id, watcher_id: @watching.watcher_id }
+    patch :update, id: @watching, watching: { project_id: @watching.project_id, user_id: @watching.user_id }
     assert_redirected_to watching_path(assigns(:watching))
   end
 

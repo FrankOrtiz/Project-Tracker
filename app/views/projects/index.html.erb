@@ -37,7 +37,8 @@
         <% if current_user %>
         <%= link_to 'Create Project', new_project_path, class:'btn btn-primary btn-sm' %>
         <% else %>
-        <%= link_to 'Log in to create a project!', new_sessions_path %>
+        <%= link_to 'Create Project', new_sessions_path, class:'btn btn-primary btn-sm' %>
+       <!--  <%= link_to 'Log in to create a project!', new_sessions_path %> -->
         <% end %>
       </div>
     </div>

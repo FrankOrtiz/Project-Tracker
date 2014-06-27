@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626195525) do
+ActiveRecord::Schema.define(version: 20140626201408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,13 @@ ActiveRecord::Schema.define(version: 20140626195525) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   create_table "watchings", force: true do |t|
-    t.integer  "watcher_id"
-    t.integer  "watched_id"
+    t.integer  "project_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "watchings", ["project_id"], name: "index_watchings_on_project_id", using: :btree
+  add_index "watchings", ["user_id"], name: "index_watchings_on_user_id", using: :btree
 
 end

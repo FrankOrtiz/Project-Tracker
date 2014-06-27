@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	 @user = User.new user_params 
 
 	 if @user.save 
-	 	redirect_to root_path, notice: "Created user" 
+	 	redirect_to new_sessions_path, notice: "Account created! Log in to get started!" 
 	 else 
 	 	redirect_to '/users/new', notice: "Failed to create user"
 	 end 

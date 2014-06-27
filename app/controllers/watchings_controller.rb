@@ -24,11 +24,15 @@ class WatchingsController < ApplicationController
   # POST /watchings
   # POST /watchings.json
   def create
+
+    unless check_watching
+
     @watching = Watching.new(watching_params)
+    end
 
     respond_to do |format|
       if @watching.save
-        format.html { redirect_to @watching, notice: 'Watching was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Watching was successfully created.' }
         format.json { render :show, status: :created, location: @watching }
       else
         format.html { render :new }
@@ -56,7 +60,7 @@ class WatchingsController < ApplicationController
   def destroy
     @watching.destroy
     respond_to do |format|
-      format.html { redirect_to watchings_url, notice: 'Watching was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Watching was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +73,12 @@ class WatchingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def watching_params
-      params.require(:watching).permit(:watcher_id, :watched_id)
+      params.require(:watching).permit(:project_id, :user_id)
     end
+
+    def check_watching
+      @project = Project.find(watching_params[:project_id])
+        watchings = @project.watchings.map {|watching| watching.user_id}
+        watchings.include?(current_user.id)
+    end 
 end
