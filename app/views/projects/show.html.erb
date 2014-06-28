@@ -6,30 +6,29 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
    
-
-        <h2 class="project-title"><%= @project.name %></h2>
+        <div class="panel-heading">
+          <br>
+        <h3 class="project-title"><%= @project.name %></h3>
+        </div>
         <div class="panel panel-defult">  
         <div class="panel-title"><span class="author">Posted by: <%= @project.author %></span></div>
         <div class="panel-body">
           <%= simple_format h(@project.description).gsub(/\n/, '<br/>') %>
         </div>
-
-      <p>   
+      </div>
+      <div class="panel panel-defult"> 
         <div class="panel-heading">
           <h3 class="panel-title">Who's involved:</h3>
           </div>
+          <div class="panel panel-defult">
         <div class="panel-body">
           <%= simple_format h(@project.who).gsub(/\n/, '<br/>') %>
         </div>
-      </p>
-
-      <p>
-
+      </div>
         <div class="panel-heading">
           <h3 class="panel-title">How others can become involved:</h3>
         </div>
         <div class="panel-body"><%= simple_format h(@project.how).gsub(/\n/, '<br/>') %></div> 
-      </p>
 
  </div>
 
