@@ -5,28 +5,35 @@
   <div class="row">
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
-
-      <p>
+   
 
         <h2 class="project-title"><%= @project.name %></h2>
-        <span class="author">Posted by: <%= @project.author %></span>
-        <%= simple_format h(@project.description).gsub(/\n/, '<br/>') %>
-      </p>
+        <div class="panel panel-defult">  
+        <div class="panel-title"><span class="author">Posted by: <%= @project.author %></span></div>
+        <div class="panel-body">
+          <%= simple_format h(@project.description).gsub(/\n/, '<br/>') %>
+        </div>
 
       <p>   
-        <h4>Who's involved:</h4>
-        <%= simple_format h(@project.who).gsub(/\n/, '<br/>') %>
+        <div class="panel-heading">
+          <h3 class="panel-title">Who's involved:</h3>
+          </div>
+        <div class="panel-body">
+          <%= simple_format h(@project.who).gsub(/\n/, '<br/>') %>
+        </div>
       </p>
 
       <p>
 
-        <h4>How others can become involved:</h4>
-        <%= simple_format h(@project.how).gsub(/\n/, '<br/>') %>
+        <div class="panel-heading">
+          <h3 class="panel-title">How others can become involved:</h3>
+        </div>
+        <div class="panel-body"><%= simple_format h(@project.how).gsub(/\n/, '<br/>') %></div> 
       </p>
 
+ </div>
 
       <%= @project.watchings.count %> Curently watching this project
-
       <% if current_user %>
         <% project_watching = @project.watchings.find_by user_id: current_user.id %>
         <p>
@@ -42,9 +49,6 @@
         </p>
       <% else %>
       <% end %>
-
-
-
 
 
       <% if @project.editor %>
